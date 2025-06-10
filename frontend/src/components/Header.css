@@ -1,0 +1,19 @@
+.header {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+  color: #e65c00;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin: 0;
+}
