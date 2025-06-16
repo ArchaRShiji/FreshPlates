@@ -11,5 +11,6 @@ router.post("/login",userController.loginUser);
 router.post("/create-menu",upload.single("image"),menuController.createMenu);
 
 router.post("/create-order",orderController.createOrder);
+router.get("/getOrders/:buyer_id",orderController.getOrders);
 
 module.exports = router;
