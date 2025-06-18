@@ -4,7 +4,9 @@ import Signup from './pages/Signup';
 import Homepage from './pages/Homepage';
 import Browsemeals from './pages/Browsemeals';
 import Login from './pages/Login';
-import UserHomepage from './pages/user/Homepage';
+import UserHomepage from './pages/user/Cart.jsx';
+import AdminDashboard from './pages/Admin/AdminDashboard.jsx';
+import ChefDashboard from './pages/Chef/ChefDashboard.jsx';
 
 function App() {
   return (
@@ -14,7 +16,11 @@ function App() {
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Browsemeals" element={<Browsemeals />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/user/Homepage" element={<UserHomepage/>}/>
+        <Route path="/" element={<UserHomepage/>}/>
+
+        <Route path='/Admin/AdminDashboard' element={<AdminDashboard/>}/>
+
+        <Route path='/Chef/ChefDashboard' element={<ChefDashboard/>}/>
       </Routes>
     </Router>
   );

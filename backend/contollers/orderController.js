@@ -30,9 +30,9 @@ exports.createOrder = async( req,res)=>{
 exports.getOrders = async(req,res) =>{
     try {
         const {buyer_id} = req.params;
-        const allOrders = await Order.find({buyer_id});
-        res.status(201).json({message:"retrieved alll orders",allOrders});
-    } catch (error) {
+        const orders = await Order.find({ buyer_id }).populate("menu_id");        
+        res.status(200).json({ message: "Orders fetched", orders });    
+    }catch (error) {
         res.status(500).json({ error: "Failed to retrieve order", details: error.message });
     }
 };

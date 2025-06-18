@@ -5,7 +5,7 @@ const cartSchema = new mongoose.Schema({
     items: [
     {
       menu: { type: mongoose.Schema.Types.ObjectId, ref: "Menu" },
-      quantity: Number,
+      quantity: { type: Number, default: 1 },
     },
   ],
   updatedAt: { type: Date, default: Date.now },

@@ -1,12 +1,15 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Navbar from "../components/Navbar";
+import PublicNavbar from "../components/Navbar";
 import "./Homepage.css"; // Importing the CSS file
+import UserNavbar from "./user/UserNavbar";
 
 function Homepage() {
+  const user = localStorage.getItem("user");
+  const isLoggedIn = user !== null;
   return (
     <div>
-      <Navbar />
+      {isLoggedIn? <UserNavbar/> :<PublicNavbar/>};
       <Header/>
       <Footer/>
     </div>

@@ -32,9 +32,9 @@ function Login(){
       if (data.user.role === "admin") {
         navigate("/Admin/AdminDashboard");
       } else if (data.user.role === "chef") {
-        navigate("/chef/chefdashboard");
+        navigate("/Chef/ChefDashboard");
       } else {
-        navigate("/user/Homepage");
+        navigate("/");
       }
     } catch (err) {
       console.error(err);

@@ -1,13 +1,13 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import Navbar from "../../components/Navbar";
-import "./Homepage.css"; // Importing the CSS file
+import UserNavbar from "./UserNavbar";
 
 function UserHomepage() {
   return (
     <div>
-      <Navbar />
+      <UserNavbar />
       <Header/>
+      <h1>hey cart</h1>
       <Footer/>
     </div>
   );
