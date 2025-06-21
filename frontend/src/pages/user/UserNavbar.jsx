@@ -20,7 +20,6 @@ function UserNavbar() {
 
                     <NavLink to="/user/cart">Cart</NavLink>
 
-                    <NavLink to="">Profile</NavLink>
                     <button onClick={handleLogout} className="logout-link">Logout</button>
                 </div>
             </div>

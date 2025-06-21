@@ -84,7 +84,7 @@
 }
 
 .login-img{
-    background-image: url("../assests/homeCookedImage.png");
+    background-image: url("../assets/homeCookedImage.png");
     background-repeat: repeat-y;
     background-size: contain;
     width: 100%;

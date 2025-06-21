@@ -7,12 +7,14 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  display: flex;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .navbar-logo {
@@ -22,13 +24,34 @@
 }
 
 .navbar-links a {
-  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   text-decoration: none;
   color: #333;
   font-weight: 500;
   transition: color 0.2s ease;
+
 }
 
 .navbar-links a:hover {
   color: #e65c00;
 }
+
+.navbar-links a.active {
+  color: #e65c00;
+  font-weight: 600;
+  border-bottom: 2px solid #e65c00;
+}
+
+.logout-link {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 1.5rem;
+}
+
+.logout-link:hover {
+  color: #e65c00;
+}
+

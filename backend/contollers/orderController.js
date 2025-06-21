@@ -27,12 +27,31 @@ exports.createOrder = async( req,res)=>{
     }
 };
 
-exports.getOrders = async(req,res) =>{
-    try {
-        const {buyer_id} = req.params;
-        const orders = await Order.find({ buyer_id }).populate("menu_id");        
-        res.status(200).json({ message: "Orders fetched", orders });    
-    }catch (error) {
-        res.status(500).json({ error: "Failed to retrieve order", details: error.message });
-    }
+exports.getChefOrders = async (req, res) => {
+  try {
+    const { chef_id } = req.params;
+    const orders = await Order.find()
+      .populate({
+        path: "menu_id",
+        match: { chef_id }, // filter only menus by this chef
+      })
+      .populate("buyer_id");
+
+    // filter out orders where menu_id was null due to mismatch
+    const filteredOrders = orders.filter(order => order.menu_id !== null);
+
+    res.status(200).json({ orders: filteredOrders });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch chef's orders", details: error.message });
+  }
+};
+
+exports.updateOrderStatus = async (req, res) => {
+  const { orderId, status } = req.body;
+  try {
+    const order = await Order.findByIdAndUpdate(orderId, { status }, { new: true });
+    res.status(200).json({ message: "Status updated", order });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to update status", details: error.message });
+  }
 };

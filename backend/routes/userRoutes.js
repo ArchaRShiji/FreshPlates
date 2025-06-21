@@ -11,9 +11,13 @@ router.post("/login",userController.loginUser);
 
 router.post("/create-menu",upload.single("image"),menuController.createMenu);
 router.get("/get-menu",menuController.getMenu);
+router.put("/update-Menu",menuController.updateMenu);
+router.delete("/delete-menu", menuController.deleteMenu);
 
 router.post("/create-order",orderController.createOrder);
-router.get("/getOrders/:buyer_id",orderController.getOrders);
+router.get("/get-chef-orders/:chef_id", orderController.getChefOrders);
+router.put("/update-order-status", orderController.updateOrderStatus);
+router.get("/get-menu/:chef_id",menuController.getMenu);
 
 router.post("/add-cart",cartController.addCart);
 router.get("/get-cart/:user_id", cartController.getCart);

@@ -1,0 +1,25 @@
+.why-freshplates {
+  padding: 2rem;
+  background-color: #fff;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.why-freshplates ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-freshplates li {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+.aboutus{
+  padding: 2rem;
+  background-color: #fff;
+  text-align: left;
+  margin-top: 2rem;
+}
+.aboutus h6{
+    font-size: 1.1rem;
+}

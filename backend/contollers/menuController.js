@@ -27,12 +27,14 @@ exports.createMenu = async (req, res) => {
   }
 };
 
-exports.getMenu = async(req,res) =>{
+exports.getMenu = async (req, res) => {
+  const { chef_id } = req.params;
   try {
-    const meals = await Menu.find({ status: "active" }).populate("chef_id", "name");
-    res.status(201).json({ message: "All menus fetched", meals});
-  } catch (error) {
-     res.status(500).json({ error: "Error fetching menus", details: error.message });
+    const filter = chef_id ? { chef_id } : {};
+    const meals = await Menu.find(filter);
+    res.json({ meals });
+  } catch (err) {
+    res.status(500).json({ error: "Error fetching menu" });
   }
 };
 

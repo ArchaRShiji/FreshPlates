@@ -1,13 +1,11 @@
 import './Header.css';
+import Banner from "../assets/Banner.png";
 
 function Header() {
     return (
-        <header className="header">
-            <div className="header-container">
-                <h1>FreshPlates</h1>
-                <p>Fresh, Homemade Meals Delivered To You</p>
-            </div>
-        </header>
+        <div className="header" style={{ backgroundImage: `url(${Banner})` }} >
+
+        </div>
     );
 }
 

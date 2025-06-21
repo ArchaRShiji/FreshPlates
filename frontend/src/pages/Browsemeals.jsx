@@ -5,6 +5,7 @@ import "./Browsemeals.css";
 import { useEffect, useState } from "react";
 import Card from "../components/card";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 function Browsemeals(){
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ const user = JSON.parse(localStorage.getItem("user"));
     return(
         <div>
             {isLoggedIn ? <UserNavbar /> : <PublicNavbar />}
+            <Header/>
             <div className="meals-container">
                 {menuItems.map((meal) => (
                   <Card

@@ -8,7 +8,7 @@
 
 /* Left: Image section */
 .signup-image {
-  background-image: url("../assests/homeCookedImage.png");
+  background-image: url("../assets/homeCookedImage.png");
   background-repeat: repeat-y;
   background-size: contain; /* or 'auto' depending on image behavior */
   background-position: center;
