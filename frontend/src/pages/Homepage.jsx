@@ -1,7 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import PublicNavbar from "../components/Navbar";
-import "./Homepage.css"; // Importing the CSS file
 import UserNavbar from "./user/UserNavbar";
 
 function Homepage() {

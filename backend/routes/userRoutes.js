@@ -15,6 +15,8 @@ router.get("/get-menu",menuController.getMenu);
 router.post("/create-order",orderController.createOrder);
 router.get("/getOrders/:buyer_id",orderController.getOrders);
 
-router.get("/add-cart",cartController.addCart);
+router.post("/add-cart",cartController.addCart);
+router.get("/get-cart/:user_id", cartController.getCart);
+router.delete("/delete-cart-item",cartController.deleteCartItem);
 
 module.exports = router;
