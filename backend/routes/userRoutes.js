@@ -18,6 +18,8 @@ router.post("/create-order",orderController.createOrder);
 router.get("/get-chef-orders/:chef_id", orderController.getChefOrders);
 router.put("/update-order-status", orderController.updateOrderStatus);
 router.get("/get-menu/:chef_id",menuController.getMenu);
+router.get("/get-user-orders/:user_id", orderController.getUserOrders);
+
 
 router.post("/add-cart",cartController.addCart);
 router.get("/get-cart/:user_id", cartController.getCart);

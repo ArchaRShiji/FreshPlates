@@ -44,11 +44,11 @@ const user = JSON.parse(localStorage.getItem("user"));
       alert("Error adding to cart");
     }
   };
-  const handlePlaceOrder =() => {
-  //const user = JSON.parse(localStorage.getItem("user"));
+  const handlePlaceOrder = (meal) => {
   if (!user) return alert("Login required");
-     navigate("/user/orders");
-  };
+  navigate("/user/orders", { state: { mealToOrder: meal } });
+};
+
 
     return(
         <div>
@@ -62,7 +62,7 @@ const user = JSON.parse(localStorage.getItem("user"));
                     onAddToCart={handleAddToCart}
                     showAdd={isLoggedIn}  // only show Add to Cart if logged in
                     showOrder={isLoggedIn}
-                    onPlaceOrder={handlePlaceOrder}
+onPlaceOrder={() => handlePlaceOrder(meal)}
                   />
                     ))}
             </div>

@@ -11,7 +11,8 @@ function Card({
   showOrder,
   onPlaceOrder,
   onQuantityChange,
-  onDeliveryChange
+  onDeliveryChange,
+  isOrdered
 }) {
   return (
     <div className="meal-card">
@@ -68,10 +69,15 @@ function Card({
       </button>
     )}
     {showOrder && (
-      <button onClick={() => onPlaceOrder(meal._id)} className="place-order-btn">
-        Place Order
-      </button>
-    )}
+  <button
+    onClick={() => onPlaceOrder(meal._id)}
+    className="place-order-btn"
+    disabled={isOrdered}
+    style={isOrdered ? { backgroundColor: "#aaa", cursor: "not-allowed" } : {}}
+  >
+    {isOrdered ? "Ordered" : "Place Order"}
+  </button>
+)}
   </div>
   )}
 

@@ -55,3 +55,16 @@ exports.updateOrderStatus = async (req, res) => {
     res.status(500).json({ error: "Failed to update status", details: error.message });
   }
 };
+
+exports.getUserOrders = async (req, res) => {
+  try {
+    const { user_id } = req.params;
+    const orders = await Order.find({ buyer_id: user_id })
+      .populate("menu_id")
+      .sort({ created_at: -1 });
+
+    res.status(200).json({ orders });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch user orders", details: error.message });
+  }
+};
